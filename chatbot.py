@@ -6,7 +6,15 @@ def run_chatbot():
     st.title("🤖 ChatBot Mentor")
     st.write("Hazle preguntas a tu asistente de datos personalizado.")
 
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
+    #openai.api_key = st.secrets["OPENAI_API_KEY"]
+    st.write("📡 Intentando cargar la clave OpenAI...")
+    try:
+        openai.api_key = st.secrets["OPENAI_API_KEY"]
+        st.write("✅ Clave cargada correctamente.")
+    except Exception as e:
+        st.error(f"❌ Error cargando clave OpenAI: {e}")
+        return
+
 
     if "messages" not in st.session_state:
         st.session_state.messages = [

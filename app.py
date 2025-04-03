@@ -82,7 +82,7 @@ st.set_page_config(page_title="My CV", page_icon="📄", layout="wide")
 
 # ---- Sidebar Navigation ----
 st.sidebar.title("📌 Menu")
-menu = st.sidebar.radio("Go to", ["About Me", "Experience", "Projects","Chatbot", "Contact"])
+menu = st.sidebar.radio("Go to", ["About Me", "Experience", "Projects","ChatBot", "Contact"])
 
 # ---- Page content ----
 
