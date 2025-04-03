@@ -1,6 +1,6 @@
 # chatbot.py
 import streamlit as st
-import openai
+from openai import OpenAI
 
 def run_chatbot():
     st.title("🤖 ChatBot Mentor")
@@ -9,7 +9,7 @@ def run_chatbot():
     #openai.api_key = st.secrets["OPENAI_API_KEY"]
     st.write("📡 Intentando cargar la clave OpenAI...")
     try:
-        openai.api_key = st.secrets["OPENAI_API_KEY"]
+        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
         st.write("✅ Clave cargada correctamente.")
     except Exception as e:
         st.error(f"❌ Error cargando clave OpenAI: {e}")
@@ -27,10 +27,11 @@ def run_chatbot():
         st.session_state.messages.append({"role": "user", "content": user_input})
 
         with st.spinner("Pensando..."):
-            response = openai.ChatCompletion.create(
+            response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=st.session_state.messages
             )
+
             reply = response["choices"][0]["message"]["content"]
             st.session_state.messages.append({"role": "assistant", "content": reply})
 
