@@ -98,7 +98,7 @@ elif menu == "Projects":
     st.title("🚀 Projects")
     st.write("Here you’ll showcase your projects.")
     
-elif menu == "ChatBot":
+elif menu == "Chatbot":
     run_chatbot()
 
 elif menu == "Contact":
