@@ -1,0 +1,10 @@
+venv-cv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+*.jl
+.DS_Store
+chatbot.py.py
+
+
+
