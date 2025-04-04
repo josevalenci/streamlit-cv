@@ -1,5 +1,5 @@
 # chatbot.py
-'''
+
 import streamlit as st
 from openai import OpenAI
 
@@ -93,3 +93,4 @@ def run_chatbot():
     # Mostrar historial
     for msg in st.session_state.messages[1:]:
         st.markdown(f"**{msg['role'].capitalize()}:** {msg['content']}")
+'''
