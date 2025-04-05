@@ -29,7 +29,7 @@ def run_chatbot():
 
         with st.spinner("Pensando..."):
             response = client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-mini",
                 messages=st.session_state.messages
             )
 
